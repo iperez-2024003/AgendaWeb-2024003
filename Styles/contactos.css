@@ -1,7 +1,7 @@
-/* Estilos Base unificados con Login */
+/* Configuración General coincidente con Login */
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #dde1e7; /* Color base del login */
+    background-color: #dde1e7;
     margin: 0;
     padding: 20px;
     color: #595959;
@@ -12,53 +12,57 @@ body {
     margin: 0 auto;
 }
 
-/* Header y Botones Superiores */
+/* Header */
 header {
-    margin-bottom: 40px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .header-actions {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .btn-add, .btn-fav, .link-perfil {
-    padding: 12px 20px;
-    border-radius: 15px;
+    padding: 10px 20px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: bold;
     color: #595959;
     background: #dde1e7;
-    box-shadow: 4px 4px 8px #BABECC, -4px -4px 8px #ffffff73; /* Estilo neumórfico del login */
+    box-shadow: 4px 4px 8px #BABECC, -4px -4px 8px #ffffff;
     transition: 0.3s;
 }
 
 .btn-add:hover, .btn-fav:hover, .link-perfil:hover {
+    box-shadow: inset 2px 2px 5px #BABECC, inset -2px -2px 5px #ffffff;
     color: #3498db;
-    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #ffffff73;
 }
 
-/* Rejilla de tarjetas */
+/* Grid de Tarjetas */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
     padding: 10px;
 }
 
-/* Estilo de Tarjeta (Ventana) */
+/* LA TARJETA (ESTILO VENTANA) */
 .card {
     background-color: #dde1e7;
     border-radius: 20px;
     padding: 10px;
     box-shadow: 9px 9px 16px rgb(163,177,198,0.6), 
-                -9px -9px 16px rgba(255,255,255, 0.5); /* Sombra igual al login */
+                -9px -9px 16px rgba(255,255,255, 0.5);
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .tools {
@@ -82,51 +86,75 @@ header {
 .yellow { background-color: #ffbd44; }
 .green { background-color: #00ca4e; }
 
-/* Contenido Interno */
+.window-title {
+    font-size: 10px;
+    color: #a3b1c6;
+    margin-left: auto;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenido de la Tarjeta */
 .card__content {
     padding: 20px 15px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
 }
 
 .contact-info h3 {
     margin: 0;
-    font-size: 1.1em;
-    color: #595959;
+    font-size: 1.2rem;
 }
 
 .contact-info p {
+    margin: 5px 0;
     color: #888;
-    font-size: 0.9em;
-    margin-top: 8px;
 }
 
-/* Botón Ver Detalles */
-.btn-view {
-    display: block;
-    margin-top: 20px;
-    padding: 10px;
-    background: #dde1e7;
-    border-radius: 12px;
+/* NUEVAS ACCIONES (Iconos Llamar, Mensaje, etc) */
+.card__actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.action-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: #3498db;
-    font-weight: 700;
-    font-size: 0.8em;
-    box-shadow: 3px 3px 6px #BABECC, -3px -3px 6px #ffffff73;
+    background: #dde1e7;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 4px 4px 8px #BABECC, -4px -4px 8px #ffffff;
     transition: 0.2s;
 }
 
-.btn-view:hover {
-    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #ffffff73;
+.action-btn:hover {
+    transform: scale(1.1);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .header-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
+.action-btn:active {
+    box-shadow: inset 3px 3px 6px #BABECC, inset -3px -3px 6px #ffffff;
+}
+
+/* Botón Ver Detalles Inferior */
+.btn-view {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    background: #dde1e7;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 3px 3px 6px #BABECC, -3px -3px 6px #ffffff;
+}
+
+.btn-view:hover {
+    box-shadow: inset 2px 2px 4px #BABECC, inset -2px -2px 4px #ffffff;
 }
