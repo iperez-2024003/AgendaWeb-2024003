@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Tareas</title>
+    <link rel="stylesheet" href="../Styles/contactos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Mis Pendientes</h1>
+            <div class="header-actions">
+                <input type="text" id="taskInput" class="task-input-style" placeholder="Escribe una tarea..." style="flex-grow: 1;">
+                <select id="priorityInput" class="task-input-style">
+                    <option value="Alta">Alta 🔴</option>
+                    <option value="Media">Media 🟡</option>
+                    <option value="Baja">Baja 🟢</option>
+                </select>
+                <button onclick="addTask()" class="btn-task">Agregar</button>
+                <a href="contactos.html" class="link-perfil">Volver</a>
+            </div>
+        </header>
+
+        <main class="contact-grid" id="taskList">
+            </main>
+    </div>
+    <script src="../Js/tareas.js"></script>
+</body>
+</html>

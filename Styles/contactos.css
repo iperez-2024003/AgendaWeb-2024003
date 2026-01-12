@@ -25,7 +25,8 @@ header {
     margin-top: 20px;
 }
 
-.btn-add, .btn-fav, .link-perfil {
+/* Botones del Header (Add, Fav, Perfil, Tareas) */
+.btn-add, .btn-fav, .link-perfil, .btn-task {
     padding: 10px 20px;
     border-radius: 12px;
     text-decoration: none;
@@ -34,9 +35,14 @@ header {
     background: #dde1e7;
     box-shadow: 4px 4px 8px #BABECC, -4px -4px 8px #ffffff;
     transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
 }
 
-.btn-add:hover, .btn-fav:hover, .link-perfil:hover {
+.btn-add:hover, .btn-fav:hover, .link-perfil:hover, .btn-task:hover {
     box-shadow: inset 2px 2px 5px #BABECC, inset -2px -2px 5px #ffffff;
     color: #3498db;
 }
@@ -111,7 +117,7 @@ header {
     color: #888;
 }
 
-/* NUEVAS ACCIONES (Iconos Llamar, Mensaje, etc) */
+/* ACCIONES (Iconos Llamar, Mensaje, etc) */
 .card__actions {
     display: flex;
     justify-content: center;
@@ -141,8 +147,8 @@ header {
     box-shadow: inset 3px 3px 6px #BABECC, inset -3px -3px 6px #ffffff;
 }
 
-/* Botón Ver Detalles Inferior */
-.btn-view {
+/* Botón Ver Detalles e Inputs de Tareas */
+.btn-view, .task-input-style {
     display: block;
     padding: 10px;
     margin-top: 10px;
@@ -153,6 +159,9 @@ header {
     font-weight: bold;
     font-size: 0.9rem;
     box-shadow: 3px 3px 6px #BABECC, -3px -3px 6px #ffffff;
+    border: none;
+    outline: none;
+    text-align: center;
 }
 
 .btn-view:hover {
