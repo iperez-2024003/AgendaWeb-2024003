@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Web - Login</title>
+    <title>Agenda Web - Login Pro</title>
     <link rel="stylesheet" href="/AgendaWeb-2024003/Styles/login.css">
 </head>
 <body>
-    <div class="login-card">
-        <form>
-            <h2>Agenda Web 2024</h2>
-            <div class="input-group">
-                <input type="email" placeholder="Correo electrónico" required>
+    <div class="main-layout">
+        
+        <div class="form-container">
+            <div class="card">
+                <div class="tools">
+                    <div class="circle"><span class="red box"></span></div>
+                    <div class="circle"><span class="yellow box"></span></div>
+                    <div class="circle"><span class="green box"></span></div>
+                    <span class="window-title">Agenda Web Login</span>
+                </div>
+
+                <div class="card__content">
+                    <div class="login-box">
+                        <div class="text">Bienvenido</div>
+                        <form>
+                            <div class="field">
+                                <span class="icon">👤</span>
+                                <input required type="text" class="input">
+                                <label class="label">Email o Usuario</label>
+                            </div>
+
+                            <div class="field">
+                                <span class="icon">🔒</span>
+                                <input required type="password" class="input">
+                                <label class="label">Contraseña</label>
+                            </div>
+
+                            <button class="button">INGRESAR</button>
+
+                            <div class="forgot-pass">
+                                <a href="#">¿Olvidaste tu contraseña?</a>
+                            </div>
+
+                            <div class="sign-up">
+                                ¿No tienes cuenta? <a href="#">Regístrate</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="input-group">
-                <input type="password" placeholder="Contraseña" required>
+        </div>
+
+        <div class="image-side">
+            <div class="overlay-info">
             </div>
-            <button type="submit">Iniciar Sesión</button>
-        </form>
+        </div>
     </div>
 </body>
 </html>
