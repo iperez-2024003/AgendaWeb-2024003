@@ -1,50 +1,94 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f7f6;
-    margin: 0;
-    padding: 20px;
-}
-
+/* Estilos generales de contenedor */
 .container {
-    max-width: 800px; /* Ancho máximo en PC */
-    margin: 0 auto;
-    width: 100%; /* Responsive: ocupa todo en móvil */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-header {
+.header-actions {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
     align-items: center;
     margin-bottom: 20px;
 }
 
 .btn-add {
-    background-color: #27ae60;
+    background-color: #2ecc71;
     color: white;
-    border: none;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-fav {
+    background-color: #f1c40f;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.link-perfil {
+    color: #2ecc71;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .contact-item {
-    background: white;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 8px;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Ajuste para móviles (Punto 5) */
-@media (max-width: 600px) {
-    .contact-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    header {
-        flex-direction: column;
-    }
+/* Para la vista de detalles y perfil */
+.detail-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.btn-back {
+    background-color: #7f8c8d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-home {
+    background-color: #34495e;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+/* Estilos específicos para la página de Perfil */
+.perfil-box {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.perfil-divider {
+    width: 100%;
+    border: 0.5px solid #ddd;
+    margin: 10px 0;
+}
+
+.btn-home {
+    background-color: #34495e;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn-home:hover {
+    background-color: #2c3e50;
 }
