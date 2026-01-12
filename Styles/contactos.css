@@ -1,3 +1,4 @@
+/* Estilos Base */
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f7f6;
@@ -6,27 +7,55 @@ body {
 }
 
 .container {
-    max-width: 800px; /* Ancho máximo en PC */
+    max-width: 800px;
     margin: 0 auto;
-    width: 100%; /* Responsive: ocupa todo en móvil */
+    width: 100%;
 }
 
+/* Encabezado y Botones de Navegación */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los botones bajen si no caben */
+    gap: 15px;
 }
 
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilos de Botones */
 .btn-add {
     background-color: #27ae60;
     color: white;
-    border: none;
     padding: 10px 15px;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+.btn-fav {
+    background-color: #f1c40f;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-perfil {
+    background-color: #34495e;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Lista de Contactos */
 .contact-item {
     background: white;
     margin-bottom: 10px;
@@ -38,13 +67,30 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Ajuste para móviles (Punto 5) */
+.btn-view {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/* Ajuste para móviles (Punto 5 del Laboratorio) */
 @media (max-width: 600px) {
-    .contact-item {
+    header {
         flex-direction: column;
         text-align: center;
     }
-    header {
+    
+    .header-actions {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
     }
 }
