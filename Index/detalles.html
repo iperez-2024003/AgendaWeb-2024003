@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Contacto</title>
+    <title>Detalle del Contacto</title>
     <link rel="stylesheet" href="../Styles/contactos.css">
 </head>
 <body>
-    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh;">
-        <header>
-            <h1>Detalle del Contacto</h1>
+    <div class="container detalle-container">
+        <header class="detalle-header">
+            <h1>🔍 Detalle del Contacto</h1>
         </header>
 
-        <div class="card" style="width: 100%; max-width: 450px;">
+        <div class="card detalle-card">
             <div class="tools">
                 <div class="circle"><span class="red box"></span></div>
                 <div class="circle"><span class="yellow box"></span></div>
                 <div class="circle"><span class="green box"></span></div>
+                <span class="window-title">Información Completa</span>
             </div>
-            <div class="card__content" style="text-align: left;">
-                <div class="contact-info">
-                    <p><strong>Nombre:</strong> Juan Pérez</p>
-                    <p><strong>Teléfono:</strong> 5555-0101</p>
-                    <p><strong>Correo:</strong> juan.perez@example.com</p>
-                    <p><strong>Dirección:</strong> Ciudad de Guatemala</p>
-                    <p><strong>Categoría:</strong> Trabajo</p>
-                </div>
-                <a href="contactos.html" class="btn-view" style="text-align: center;">Volver a la lista</a>
+            <div class="card__content" id="detalleContacto">
+                <!-- El contenido se cargará dinámicamente con JavaScript -->
             </div>
         </div>
     </div>
+    
+    <script src="../Js/contactos.js"></script>
 </body>
 </html>

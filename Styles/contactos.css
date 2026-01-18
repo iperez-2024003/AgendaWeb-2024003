@@ -1,169 +1,619 @@
-/* Configuración General coincidente con Login */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #dde1e7;
+/* ==========================================
+   AGENDA WEB PROFESIONAL - ESTILO PREMIUM
+   ========================================== */
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/037/503/539/small_2x/calendar-on-white-wood-texture-backgrounds-with-copy-space-for-your-concepts-wooden-table-top-view-photo.jpg') center/cover fixed;
+    min-height: 100vh;
     padding: 20px;
-    color: #595959;
+    color: #2d3748;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+    z-index: -1;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Header */
+/* ==========================================
+   HEADER PROFESIONAL - CENTRADO
+   ========================================== */
 header {
+    margin-bottom: 50px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 30px;
     text-align: center;
-    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-actions {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-/* Botones del Header (Add, Fav, Perfil, Tareas) */
+/* Botones Premium del Header */
 .btn-add, .btn-fav, .link-perfil, .btn-task {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 12px;
     text-decoration: none;
-    font-weight: bold;
-    color: #595959;
-    background: #dde1e7;
-    box-shadow: 4px 4px 8px #BABECC, -4px -4px 8px #ffffff;
-    transition: 0.3s;
-    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
     cursor: pointer;
-    font-family: inherit;
     display: inline-flex;
     align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn-add:hover, .btn-fav:hover, .link-perfil:hover, .btn-task:hover {
-    box-shadow: inset 2px 2px 5px #BABECC, inset -2px -2px 5px #ffffff;
-    color: #3498db;
+.btn-add {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* Grid de Tarjetas */
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-fav {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+.btn-fav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+}
+
+.link-perfil {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.link-perfil:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.6);
+}
+
+.btn-task {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+}
+
+.btn-task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 112, 154, 0.6);
+}
+
+/* ==========================================
+   GRID DE TARJETAS MODERNO - CENTRADO
+   ========================================== */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     padding: 10px;
+    justify-items: center;
 }
 
-/* LA TARJETA (ESTILO VENTANA) */
+/* ==========================================
+   TARJETAS PREMIUM CON FOTO
+   ========================================== */
 .card {
-    background-color: #dde1e7;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    padding: 10px;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), 
-                -9px -9px 16px rgba(255,255,255, 0.5);
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    backdrop-filter: blur(20px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.card:hover::before {
+    transform: scaleX(1);
 }
 
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}
+
+/* Header de la Tarjeta */
 .tools {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .circle {
-    padding: 0 4px;
+    padding: 0 3px;
 }
 
 .box {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.red { background-color: #ff605c; }
-.yellow { background-color: #ffbd44; }
-.green { background-color: #00ca4e; }
+.red { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); }
+.yellow { background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%); }
+.green { background: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%); }
 
 .window-title {
-    font-size: 10px;
-    color: #a3b1c6;
     margin-left: auto;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 /* Contenido de la Tarjeta */
 .card__content {
-    padding: 20px 15px;
+    padding: 30px 25px;
     text-align: center;
 }
 
+/* FOTO DEL CONTACTO EN LA CARD */
+.contact-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 4px solid #667eea;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    object-fit: cover;
+    display: block;
+}
+
 .contact-info h3 {
-    margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
 }
 
 .contact-info p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
     margin: 5px 0;
-    color: #888;
+    font-weight: 500;
 }
 
-/* ACCIONES (Iconos Llamar, Mensaje, etc) */
+/* Acciones de la Tarjeta */
 .card__actions {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin: 20px 0;
+    margin: 25px 0 20px 0;
 }
 
 .action-btn {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.3rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     text-decoration: none;
-    background: #dde1e7;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    box-shadow: 4px 4px 8px #BABECC, -4px -4px 8px #ffffff;
-    transition: 0.2s;
+    backdrop-filter: blur(10px);
 }
 
-.action-btn:hover {
-    transform: scale(1.1);
+.action-btn:nth-child(1) {
+    border-color: #667eea;
+    color: #667eea;
 }
 
-.action-btn:active {
-    box-shadow: inset 3px 3px 6px #BABECC, inset -3px -3px 6px #ffffff;
+.action-btn:nth-child(1):hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* Botón Ver Detalles e Inputs de Tareas */
-.btn-view, .task-input-style {
+.action-btn:nth-child(2) {
+    border-color: #48bb78;
+    color: #48bb78;
+}
+
+.action-btn:nth-child(2):hover {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+}
+
+.action-btn:nth-child(3) {
+    border-color: #f56565;
+    color: #f56565;
+}
+
+.action-btn:nth-child(3):hover {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    color: white;
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(245, 101, 101, 0.4);
+}
+
+/* Botón Ver Detalles */
+.btn-view {
     display: block;
-    padding: 10px;
-    margin-top: 10px;
-    background: #dde1e7;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-    font-size: 0.9rem;
-    box-shadow: 3px 3px 6px #BABECC, -3px -3px 6px #ffffff;
-    border: none;
-    outline: none;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-view:hover {
-    box-shadow: inset 2px 2px 4px #BABECC, inset -2px -2px 4px #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
 }
+
+/* ==========================================
+   ESTILOS PARA PÁGINA DE DETALLES
+   ========================================== */
+.detalle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.detalle-header {
+    border: none;
+    padding-bottom: 10px;
+}
+
+.detalle-card {
+    width: 100%;
+    max-width: 500px;
+}
+
+.detalle-foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+}
+
+.detalle-nombre {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.detalle-info-center {
+    text-align: center;
+}
+
+.detalle-info-left {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.detalle-campo {
+    margin: 15px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.detalle-label {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.detalle-botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.detalle-botones .btn-view {
+    flex: 1;
+}
+
+.btn-view-green {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.btn-view-gray {
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+    margin-top: 15px;
+}
+
+/* ==========================================
+   ESTILOS PARA PÁGINA DE PERFIL
+   ========================================== */
+.perfil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.perfil-header {
+    border: none;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.perfil-card {
+    width: 100%;
+    max-width: 450px;
+}
+
+.perfil-info {
+    text-align: center;
+}
+
+.perfil-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.perfil-info strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.perfil-nombre {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-divider {
+    border: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+/* ==========================================
+   ESTILOS PARA NUEVO CONTACTO
+   ========================================== */
+.nuevo-contacto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.nuevo-contacto-header {
+    border: none;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.nuevo-contacto-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-nuevo-contacto {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    backdrop-filter: blur(10px);
+}
+
+.form-input:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-input:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.form-buttons .btn-view {
+    width: 100%;
+}
+
+/* ==========================================
+   ESTILOS PARA TAREAS
+   ========================================== */
+.task-input-style {
+    padding: 12px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: white;
+    color: #2d3748;
+    outline: none;
+}
+
+.task-input-style:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.task-text {
+    font-size: 1.1rem !important;
+    color: #2d3748 !important;
+    font-weight: 600 !important;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+    }
+    
+    .btn-add, .btn-fav, .link-perfil, .btn-task {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   ANIMACIONES
+   ========================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }

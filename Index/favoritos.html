@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favoritos - Agenda</title>
+    <title>Favoritos - Agenda Pro</title>
     <link rel="stylesheet" href="../Styles/contactos.css">
 </head>
 <body>
@@ -11,41 +11,15 @@
         <header>
             <h1>⭐ Mis Favoritos</h1>
             <div class="header-actions">
-                <a href="contactos.html" class="link-perfil">Volver a Contactos</a>
+                <a href="contactos.html" class="link-perfil">← Volver a Contactos</a>
             </div>
         </header>
 
-        <main class="contact-grid">
-            <div class="card">
-                <div class="tools">
-                    <div class="circle"><span class="red box"></span></div>
-                    <div class="circle"><span class="yellow box"></span></div>
-                    <div class="circle"><span class="green box"></span></div>
-                </div>
-                <div class="card__content">
-                    <div class="contact-info">
-                        <h3>Iverson Maldonado</h3>
-                        <p>Principal</p>
-                    </div>
-                    <a href="detalles.html" class="btn-view">Ver Detalles</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="tools">
-                    <div class="circle"><span class="red box"></span></div>
-                    <div class="circle"><span class="yellow box"></span></div>
-                    <div class="circle"><span class="green box"></span></div>
-                </div>
-                <div class="card__content">
-                    <div class="contact-info">
-                        <h3>Ronald Araujo</h3>
-                        <p>Trabajo</p>
-                    </div>
-                    <a href="detalles.html" class="btn-view">Ver Detalles</a>
-                </div>
-            </div>
+        <main class="contact-grid" id="favoritosGrid">
+            <!-- Los favoritos se cargarán dinámicamente con JavaScript -->
         </main>
     </div>
+    
+    <script src="../Js/contactos.js"></script>
 </body>
 </html>
