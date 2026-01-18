@@ -1,8 +1,4 @@
-// ==========================================
-// SISTEMA DE GESTIÓN DE CONTACTOS
-// ==========================================
-
-// Base de datos de contactos
+// Contactos con Java Script Quemados
 const contactos = [
     {
         id: 1,

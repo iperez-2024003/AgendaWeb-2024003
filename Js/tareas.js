@@ -11,7 +11,6 @@ function addTask() {
     const taskCard = document.createElement('div');
     taskCard.className = 'card';
 
-    // Usamos tu estructura de tres círculos y card__content
     taskCard.innerHTML = `
         <div class="tools">
             <div class="circle"><span class="red box"></span></div>
@@ -36,7 +35,7 @@ function addTask() {
     input.focus();
 }
 
-// Función para EDITAR (Requisito Punto 7)
+
 function editTask(button) {
     const card = button.closest('.card');
     const taskText = card.querySelector('.task-text');
