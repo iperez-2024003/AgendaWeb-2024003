@@ -1,4 +1,46 @@
-/* ==========================================
+.detalle-nombre {
+    color: #1d1d1f;
+    margin-bottom: 24px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Estilo especial para campos de perfil */
+.perfil-info .perfil-campo {
+    margin: 20px 0;
+    padding: 24px 28px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    border: 0.5px solid rgba(0, 122, 255, 0.08);
+    backdrop-filter: blur(40px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.perfil-info .perfil-campo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #007AFF, #5AC8FA);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.perfil-info .perfil-campo:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(0, 122, 255, 0.15);
+    transform: translateX(-8px);
+    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.08);
+}
+
+.perfil-info .perfil-campo:hover::before {
+    opacity: 1;
+}/* ==========================================
    AGENDA WEB - ESTILO APPLE PREMIUM
    Diseño minimalista con animaciones fluidas
    ========================================== */
@@ -442,12 +484,31 @@ header h1 {
     animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.detalle-nombre, .perfil-nombre {
-    color: #1d1d1f;
-    margin-bottom: 24px;
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+.perfil-nombre {
+    background: linear-gradient(135deg, #1d1d1f 0%, #007AFF 50%, #5AC8FA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 32px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.perfil-nombre::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #007AFF, transparent);
+    border-radius: 2px;
 }
 
 .detalle-info-center {
@@ -516,27 +577,63 @@ header h1 {
 }
 
 /* ==========================================
-   ESTILOS PARA PERFIL
+   ESTILOS PARA PERFIL - ULTRA PREMIUM
    ========================================== */
+.perfil-foto {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 28px;
+    border: 5px solid rgba(0, 122, 255, 0.15);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12), 
+                0 0 0 1px rgba(0, 0, 0, 0.02);
+    object-fit: cover;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.perfil-foto:hover {
+    transform: scale(1.08);
+    box-shadow: 0 24px 64px rgba(0, 122, 255, 0.2), 
+                0 0 0 1px rgba(0, 122, 255, 0.1);
+    border-color: rgba(0, 122, 255, 0.3);
+}
+
 .perfil-info {
     text-align: center;
+    position: relative;
 }
 
 .perfil-info p {
     color: #86868b;
-    margin: 12px 0;
-    font-size: 1.05rem;
+    margin: 16px 0;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.perfil-info p:hover {
+    color: #1d1d1f;
+    transform: translateX(4px);
 }
 
 .perfil-info strong {
     color: #1d1d1f;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .perfil-divider {
     border: 0;
-    border-top: 0.5px solid rgba(0, 0, 0, 0.08);
-    margin: 24px 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 122, 255, 0.15), transparent);
+    margin: 32px 0;
 }
 
 /* ==========================================

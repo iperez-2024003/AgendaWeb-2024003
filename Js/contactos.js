@@ -98,13 +98,13 @@ function cargarContactos() {
         actionsDiv.className = 'card__actions';
         
         const btnLlamar = document.createElement('a');
-        btnLlamar.href = `tel:${contacto.telefono}`;
+        btnLlamar.href = ``;
         btnLlamar.className = 'action-btn';
         btnLlamar.title = 'Llamar';
         btnLlamar.textContent = '📞';
         
         const btnMensaje = document.createElement('a');
-        btnMensaje.href = `mailto:${contacto.correo}`;
+        btnMensaje.href = ``;
         btnMensaje.className = 'action-btn';
         btnMensaje.title = 'Mensaje';
         btnMensaje.textContent = '💬';
@@ -199,12 +199,12 @@ function cargarDetalleContacto() {
         botonesDiv.className = 'detalle-botones';
         
         const btnLlamar = document.createElement('a');
-        btnLlamar.href = `tel:${contacto.telefono}`;
+        btnLlamar.href = ``;
         btnLlamar.className = 'btn-view';
         btnLlamar.textContent = '📞 Llamar';
         
         const btnEmail = document.createElement('a');
-        btnEmail.href = `mailto:${contacto.correo}`;
+        btnEmail.href = ``;
         btnEmail.className = 'btn-view btn-view-green';
         btnEmail.textContent = '✉️ Email';
         
