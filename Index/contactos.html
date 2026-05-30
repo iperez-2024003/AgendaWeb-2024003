@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Pro - Contactos Iver</title>
+    <title>Agenda Pro | Contactos</title>
     <link rel="stylesheet" href="../Styles/contactos.css">
 </head>
 <body>
+    <aside class="header-actions">
+        <div class="sidebar-brand">
+            <span class="brand-title">Agenda Pro</span>
+            <span class="brand-subtitle">Gestión inteligente de contactos</span>
+        </div>
+        <a href="contactos.html" class="nav-link btn-home is-active">📒 Contactos</a>
+        <a href="nuevocontacto.html" class="nav-link btn-add">➕ Nuevo contacto</a>
+        <a href="favoritos.html" class="nav-link btn-fav">⭐ Favoritos</a>
+        <a href="tareas.html" class="nav-link btn-task">📝 Tareas</a>
+        <a href="perfil.html" class="nav-link link-perfil">👤 Mi Perfil</a>
+    </aside>
+
     <div class="container">
-        <header>
-            <h1> Mis Contactos</h1>
-            <div class="header-actions">
-                <a href="nuevocontacto.html" class="btn-add">➕ Agregar Nuevo</a>
-                <a href="favoritos.html" class="btn-fav">⭐ Favoritos</a>
-                <a href="perfil.html" class="link-perfil">👤 Mi Perfil</a>
-                <a href="tareas.html" class="btn-task">📝 Tareas</a>
-            </div>
+        <header class="page-header">
+            <h1>Contactos</h1>
+            <p class="page-subtitle">Visualiza, organiza y accede a tu red en segundos.</p>
         </header>
 
-        <main class="contact-grid" id="contactGrid">
-        </main>
+        <main class="contact-grid" id="contactGrid"></main>
     </div>
     
     <script src="../Js/contactos.js"></script>

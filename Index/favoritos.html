@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favoritos - Agenda Pro</title>
+    <title>Agenda Pro | Favoritos</title>
     <link rel="stylesheet" href="../Styles/contactos.css">
 </head>
 <body>
+    <aside class="header-actions">
+        <div class="sidebar-brand">
+            <span class="brand-title">Agenda Pro</span>
+            <span class="brand-subtitle">Gestión inteligente de contactos</span>
+        </div>
+        <a href="contactos.html" class="nav-link btn-home">📒 Contactos</a>
+        <a href="nuevocontacto.html" class="nav-link btn-add">➕ Nuevo contacto</a>
+        <a href="favoritos.html" class="nav-link btn-fav is-active">⭐ Favoritos</a>
+        <a href="tareas.html" class="nav-link btn-task">📝 Tareas</a>
+        <a href="perfil.html" class="nav-link link-perfil">👤 Mi Perfil</a>
+    </aside>
+
     <div class="container">
-        <header>
-            <h1> Mis Favoritos</h1>
-            <div class="header-actions">
-                <a href="contactos.html" class="link-perfil">← Volver a Contactos</a>
-            </div>
+        <header class="page-header">
+            <h1>Favoritos</h1>
+            <p class="page-subtitle">Accesos rápidos a tus contactos clave.</p>
         </header>
 
-        <main class="contact-grid" id="favoritosGrid">
-        </main>
+        <main class="contact-grid" id="favoritosGrid"></main>
     </div>
     
     <script src="../Js/contactos.js"></script>

@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Tareas</title>
+    <title>Agenda Pro | Tareas</title>
     <link rel="stylesheet" href="../Styles/contactos.css">
 </head>
 <body>
+    <aside class="header-actions">
+        <div class="sidebar-brand">
+            <span class="brand-title">Agenda Pro</span>
+            <span class="brand-subtitle">Gestión inteligente de contactos</span>
+        </div>
+        <a href="contactos.html" class="nav-link btn-home">📒 Contactos</a>
+        <a href="nuevocontacto.html" class="nav-link btn-add">➕ Nuevo contacto</a>
+        <a href="favoritos.html" class="nav-link btn-fav">⭐ Favoritos</a>
+        <a href="tareas.html" class="nav-link btn-task is-active">📝 Tareas</a>
+        <a href="perfil.html" class="nav-link link-perfil">👤 Mi Perfil</a>
+    </aside>
+
     <div class="container">
-        <header>
-            <h1>📝 Mis Pendientes</h1>
-            <div class="header-actions">
-                <input type="text" id="taskInput" class="task-input-style" placeholder="Escribe una tarea..." style="flex-grow: 1;">
-                <select id="priorityInput" class="task-input-style">
+        <header class="page-header">
+            <h1>Tareas</h1>
+            <p class="page-subtitle">Planifica pendientes con prioridad y control visual.</p>
+        </header>
+
+        <div class="page-toolbar">
+            <div class="toolbar-group">
+                <input type="text" id="taskInput" class="task-input-style toolbar-input" placeholder="Escribe una tarea..." aria-label="Nueva tarea">
+            </div>
+            <div class="toolbar-group">
+                <select id="priorityInput" class="task-input-style toolbar-input" aria-label="Prioridad">
                     <option value="Alta">Alta 🔴</option>
                     <option value="Media">Media 🟡</option>
                     <option value="Baja">Baja 🟢</option>
                 </select>
-                <button onclick="addTask()" class="btn-task">Agregar</button>
-                <a href="contactos.html" class="link-perfil">Volver</a>
             </div>
-        </header>
+            <button onclick="addTask()" class="toolbar-button">Agregar tarea</button>
+        </div>
 
-        <main class="contact-grid" id="taskList">
-            </main>
+        <main class="contact-grid" id="taskList"></main>
     </div>
     <script src="../Js/tareas.js"></script>
 </body>

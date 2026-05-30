@@ -9,7 +9,8 @@ function addTask() {
     }
 
     const taskCard = document.createElement('div');
-    taskCard.className = 'card';
+    taskCard.className = 'card task-card';
+    taskCard.dataset.priority = priority.value;
 
     taskCard.innerHTML = `
         <div class="tools">

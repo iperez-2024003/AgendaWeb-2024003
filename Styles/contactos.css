@@ -40,7 +40,9 @@
 
 .perfil-info .perfil-campo:hover::before {
     opacity: 1;
-}/* ==========================================
+}
+
+/* ==========================================
    AGENDA WEB - ESTILO APPLE PREMIUM
    Diseño minimalista con animaciones fluidas
    ========================================== */
@@ -59,6 +61,10 @@
     --apple-mint: #00C7BE;
     --apple-gray: #8E8E93;
     --apple-light-gray: #F2F2F7;
+    --sidebar-width: 260px;
+    --page-padding: 40px;
+    --glass-surface: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.04);
 }
 
 body {
@@ -117,15 +123,15 @@ body::after {
     left: 0;
     top: 0;
     height: 100vh;
-    width: 240px;
-    background: rgba(255, 255, 255, 0.7);
+    width: var(--sidebar-width);
+    background: var(--glass-surface);
     backdrop-filter: blur(40px) saturate(180%);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
-    border-right: 0.5px solid rgba(0, 0, 0, 0.04);
-    padding: 60px 16px 40px 16px;
+    border-right: 0.5px solid var(--glass-border);
+    padding: 56px 16px 40px 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     z-index: 1000;
     animation: slideInLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -141,8 +147,30 @@ body::after {
     }
 }
 
+/* Branding lateral */
+.sidebar-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 12px 20px;
+    margin-bottom: 4px;
+    border-bottom: 0.5px solid var(--glass-border);
+}
+
+.brand-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1d1d1f;
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    color: var(--apple-gray);
+}
+
 /* Botones del menú lateral - Estilo Apple */
-.btn-add, .btn-fav, .link-perfil, .btn-task {
+.nav-link {
     padding: 12px 16px;
     border-radius: 10px;
     text-decoration: none;
@@ -161,16 +189,25 @@ body::after {
     letter-spacing: -0.01em;
 }
 
-.btn-add:hover, .btn-fav:hover, .link-perfil:hover, .btn-task:hover {
+.nav-link:hover {
     background: rgba(0, 122, 255, 0.08);
     transform: translateX(4px);
 }
 
-.btn-add:active, .btn-fav:active, .link-perfil:active, .btn-task:active {
+.nav-link:active {
     transform: scale(0.98) translateX(4px);
 }
 
+.nav-link.is-active {
+    background: rgba(0, 122, 255, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(0, 122, 255, 0.18);
+}
+
 /* Estados específicos con colores Apple */
+.btn-home {
+    color: #1d1d1f;
+}
+
 .btn-add {
     color: var(--apple-blue);
 }
@@ -192,11 +229,21 @@ body::after {
    ========================================== */
 header {
     flex: 1;
-    padding: 60px 40px 40px 280px;
+    padding: 60px var(--page-padding) 40px calc(var(--sidebar-width) + var(--page-padding));
     display: flex;
     flex-direction: column;
     border: none;
     margin: 0;
+}
+
+.page-header {
+    gap: 8px;
+}
+
+.page-subtitle {
+    color: var(--apple-gray);
+    font-size: 1rem;
+    max-width: 720px;
 }
 
 header h1 {
@@ -205,8 +252,55 @@ header h1 {
     color: #1d1d1f;
     margin-bottom: 12px;
     letter-spacing: -0.03em;
-    text-align: center;
+    text-align: left;
     animation: fadeInDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Barra de herramientas de página */
+.page-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 20px var(--page-padding) 32px calc(var(--sidebar-width) + var(--page-padding));
+    padding: 16px;
+    background: var(--glass-surface);
+    border: 0.5px solid var(--glass-border);
+    border-radius: 16px;
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+}
+
+.toolbar-group {
+    flex: 1 1 220px;
+}
+
+.toolbar-input {
+    width: 100%;
+}
+
+.toolbar-button {
+    height: 46px;
+    padding: 0 18px;
+    border-radius: 12px;
+    border: none;
+    background: var(--apple-blue);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.2);
+}
+
+.toolbar-button:hover {
+    background: #0051D5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.3);
+}
+
+.toolbar-button:active {
+    transform: scale(0.98);
 }
 
 @keyframes fadeInDown {
@@ -225,10 +319,10 @@ header h1 {
    ========================================== */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 340px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
-    padding: 20px 40px 60px 40px;
-    margin-left: 240px;
+    padding: 20px var(--page-padding) 60px;
+    margin-left: var(--sidebar-width);
     animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     justify-content: center;
 }
@@ -255,7 +349,8 @@ header h1 {
     position: relative;
     backdrop-filter: blur(40px) saturate(180%);
     -webkit-backdrop-filter: blur(40px) saturate(180%);
-    width: 340px;
+    width: 100%;
+    max-width: 360px;
     height: auto;
 }
 
@@ -437,7 +532,7 @@ header h1 {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 60px 40px 40px 280px;
+    padding: 60px var(--page-padding) 40px calc(var(--sidebar-width) + var(--page-padding));
     max-width: 100%;
 }
 
@@ -600,6 +695,68 @@ header h1 {
     border-color: rgba(0, 122, 255, 0.3);
 }
 
+.perfil-header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.perfil-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stat-item {
+    padding: 10px 16px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.03);
+    text-align: center;
+    min-width: 90px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1d1d1f;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--apple-gray);
+    margin-top: 4px;
+}
+
+.perfil-user-info {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.perfil-username {
+    color: var(--apple-gray);
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+.perfil-bio {
+    text-align: center;
+    margin-top: 24px;
+    display: grid;
+    gap: 8px;
+}
+
+.perfil-actions {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
 .perfil-info {
     text-align: center;
     position: relative;
@@ -724,24 +881,36 @@ header h1 {
     font-weight: 600 !important;
 }
 
+.task-card .window-title {
+    font-weight: 700;
+}
+
+.task-card[data-priority="Alta"] .window-title {
+    color: #FF3B30;
+}
+
+.task-card[data-priority="Media"] .window-title {
+    color: #FF9F0A;
+}
+
+.task-card[data-priority="Baja"] .window-title {
+    color: #34C759;
+}
+
 /* ==========================================
    RESPONSIVE DESIGN
    ========================================== */
 @media (max-width: 1200px) {
     .contact-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-        margin-left: 240px;
-    }
-    
-    .card {
-        width: 300px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        margin-left: var(--sidebar-width);
     }
 }
 
 @media (max-width: 1024px) {
     .contact-grid {
         margin-left: 0;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         padding: 20px;
     }
     
@@ -753,11 +922,20 @@ header h1 {
         flex-wrap: wrap;
         padding: 20px 16px;
         border-right: none;
-        border-bottom: 0.5px solid rgba(0, 0, 0, 0.04);
+        border-bottom: 0.5px solid var(--glass-border);
+    }
+
+    .sidebar-brand {
+        width: 100%;
+        padding-bottom: 12px;
     }
     
     header {
         padding: 40px 20px 20px;
+    }
+
+    .page-toolbar {
+        margin: 20px 20px 32px;
     }
     
     .detalle-container, .perfil-container, .nuevo-contacto-container {
@@ -766,6 +944,14 @@ header h1 {
 }
 
 @media (max-width: 768px) {
+    .page-toolbar {
+        align-items: stretch;
+    }
+
+    .toolbar-button {
+        width: 100%;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
         justify-content: center;
@@ -781,8 +967,8 @@ header h1 {
         font-size: 2rem;
     }
     
-    .btn-add, .btn-fav, .link-perfil, .btn-task {
-        width: calc(50% - 4px);
+    .nav-link {
+        width: calc(50% - 6px);
     }
 }
 
